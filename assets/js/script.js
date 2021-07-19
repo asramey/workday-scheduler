@@ -50,5 +50,3 @@ for (var i = 0; i < hourList24.length; i++) {
     newTimeBlock.appendChild(textArea);
     newTimeBlock.appendChild(saveButton);
 };
-
-// Save function when button is clicked, and load when page loads
