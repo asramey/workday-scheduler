@@ -13,6 +13,7 @@ document.querySelector("#currentDay").textContent = headerDate;
 for (var i = 0; i < hourList24.length; i++) {
     // Time block divs
     var newTimeBlock = document.createElement("div");
+    newTimeBlock.id = "hour" + hourList12[i];
 
     // Compare current time to times on list, and change styles accordingly
     if (hourList24[i] === currentTime.format("HH")) {
@@ -37,7 +38,6 @@ for (var i = 0; i < hourList24.length; i++) {
     // Text area
     var textArea = document.createElement("textarea");
     textArea.className = "description col-sm-10";
-    textArea.id = "hour" + hourList12[i];
 
     // Save button
     var saveButton = document.createElement("button");
@@ -50,14 +50,5 @@ for (var i = 0; i < hourList24.length; i++) {
     newTimeBlock.appendChild(textArea);
     newTimeBlock.appendChild(saveButton);
 };
-// Save function when button is clicked
-var toDoList = [];
-toDoList[0] = document.querySelector("#hour9");
 
-var saveData = function() {
-    localStorage.setItem("toDoList", JSON.stringify(toDoList));
-};
-
-
-// Load from localStorage 
-
+// Save function when button is clicked, and load when page loads
